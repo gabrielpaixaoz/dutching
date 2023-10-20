@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Dutching</title>
     <link rel="stylesheet" href="style.css">
+    <script  src="script2.js"></script>
 </head>
 <body>
     <h1>Calculadora Dutching</h1>
@@ -15,15 +16,20 @@
         <label for=""><p>Retorno: <span>23,70</span></p></label>
         <button><p>Reniciar Caculadora</button>
         <label for="number1"><p></p>1º</label>
-        <input type="number" name="number1" id="number1">
+        <input type="number" name="number1" id="number1"  class="numbers">
+       <!--
         <span>10</span>
         <span>10</span>
+       -->
         <label for="number2"><p></p>2º</label>
-        <input type="number" name="number2" id="number2">
+        <input type="number" name="number2" id="number2" class="numbers">
         <label for="number3"><p></p>3º</label>
-        <input type="number" name="number3" id="number3">
-        
+        <input type="number" name="number3" id="number3" class="numbers">
+
+        <input type="button" value="Calcular" onclick="dutching()">
     
     </form>
+    <section id="output"></section>
+    
 </body>
 </html>
