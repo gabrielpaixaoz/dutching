@@ -1,7 +1,7 @@
 function calcular(){
 
 
-function dutching(totalbet,prob){
+function dutching(prob){
     var totalbet = Number(document.querySelector('input#investimento').value)
     var probInputs = document.querySelector('.numbers')
     var prob = [];
@@ -19,19 +19,11 @@ function dutching(totalbet,prob){
     for(var i = 0; i < prob.length; i++){
        var bet = totalbet / (prob[i] * totalprob);
         bets.push(bet.toFixed(2))
-       
     }
     return bets;
-   
-    
-    
 }
 
-
-
-
-
-var bets = dutching(totalbet,prob);
+var bets = dutching();
 var output = document.querySelector('section#output')
 output.innerHTML = `Resultado: ${bets.join(', ')}`;
 }
