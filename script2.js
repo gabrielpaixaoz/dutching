@@ -1,60 +1,36 @@
-function calcular(){
-    function dutching(prob){
-        var totalbet = Number(document.querySelector('input#investimento').value)
-        var probInputs = document.querySelectorAll('.numbers')
-        var prob = [];
-        probInputs.forEach(function(input) {
-            prob.push(Number(input.value));
-        });
-        var  totalprob  = 0;
-        
-        for(var i = 0; i < prob.length; i++){
-            totalprob += 1 / prob[i];
-        }
-
-        var bets = [];
-        
-        for(var i = 0; i < prob.length; i++){
-        var bet = totalbet / (prob[i] * totalprob);
-            bets.push(bet.toFixed(2))
-        }
-        return bets;
-    }
-
-    var bets = dutching();
-    var output = document.querySelector('section#output')
-    output.innerHTML = `Resultado: ${bets.join(', ')}`;
-}
-
-
-
-
-/*
 function calcular() {
-    function dutching(prob) {
+    function dutching() {
         var totalbet = Number(document.querySelector('input#investimento').value);
-        var probInputs = document.querySelectorAll('.numbers');
+        var probInputs = document.querySelectorAll('input[type="number"]');
         var prob = [];
+
         probInputs.forEach(function(input) {
-            prob.push(Number(input.value));
+            var numero = parseFloat(input.value) || 0; // Define 0 se não for um número válido
+            if (numero !== 0) {
+                prob.push(numero);
+            }
         });
-        var totalprob = 0;
-        
-        for (var i = 0; i < prob.length; i++) {
-            totalprob += 1 / prob[i];
+
+        if (prob.length === 0) {
+            console.log("Nenhum número válido inserido.");
+            return;
         }
 
-        var bets = [];
-        
-        for (var i = 0; i < prob.length; i++) {
-            var bet = totalbet / (prob[i] * totalprob);
-            bets.push(bet.toFixed(2));
-        }
+        var totalprob = prob.reduce(function(acc, curr) {
+            return acc + 1 / curr;
+        }, 0);
+
+        var bets = prob.map(function(probabilidade) {
+            var bet = totalbet / (probabilidade * totalprob);
+            return bet.toFixed(2);
+        });
+
         return bets;
     }
 
     var bets = dutching();
-    var output = document.querySelector('section#output');
-    output.innerHTML = `Resultados: ${bets.join(', ')}`;
+    if (bets) {
+        var output = document.querySelector('section#output');
+        output.innerHTML = `Resultado: ${bets.join(', ')}`;
+    }
 }
-*/
