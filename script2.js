@@ -11,10 +11,7 @@ function calcular() {
             }
         });
 
-        if (prob.length === 0) {
-            console.log("Nenhum número válido inserido.");
-            return;
-        }
+       
 
         var totalprob = prob.reduce(function(acc, curr) {
             return acc + 1 / curr;
