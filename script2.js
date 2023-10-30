@@ -19,6 +19,7 @@ function calcular() {
         var totalbet = Number(document.querySelector('input#investimento').value);
         var probInputs = document.querySelectorAll('input[type="number"]');
         var prob = [];
+        
 
         probInputs.forEach(function(input) {
             var numero = parseFloat(input.value) || 0; // Define 0 se não for um número válido
@@ -37,16 +38,19 @@ function calcular() {
         });
         return bets;
         
+
+        
         
 
     }
-    var retorno = []
+    
     
 
     var bets = dutching();
     if (bets) {
         var output = document.querySelector('section#output');
         output.innerHTML = `Resultado: ${bets.join(', ')}`;
+        output.innerHTML += `${retorno}` 
 
         console.log(bets)
     }
