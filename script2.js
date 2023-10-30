@@ -35,13 +35,19 @@ function calcular() {
             var bet = totalbet / (probabilidade * totalprob);
             return bet.toFixed(2);
         });
-
         return bets;
+        
+        
+
     }
+    var retorno = []
+    
 
     var bets = dutching();
     if (bets) {
         var output = document.querySelector('section#output');
         output.innerHTML = `Resultado: ${bets.join(', ')}`;
+
+        console.log(bets)
     }
 }
