@@ -32,11 +32,19 @@ function calcular() {
             return acc + 1 / curr;
         }, 0);
 
+       var probInputsValues = Array.from(probInputs).map(function(input) {
+        return parseFloat(input.value) || 0; 
+    });
+
+
+    var retorno = 
+
         var bets = prob.map(function(probabilidade) {
             var bet = totalbet / (probabilidade * totalprob);
             return bet.toFixed(2);
         });
         return bets;
+        
         
 
         
