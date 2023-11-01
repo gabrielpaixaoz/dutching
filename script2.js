@@ -7,7 +7,7 @@ function calcular() {
             input.value = valor.slice(0, -2) + '.' + valor.slice(-2); // Adiciona o ponto decimal
         } 
     }
-    // NÃO ESQUECER DE REFAZER O CODIGO POR CAUSA DO CHATGPT
+    
     // Adiciona o evento input aos campos de entrada com type="number"
     var probInputs = document.querySelectorAll('input[type="number"]');
     probInputs.forEach(function(input) {
@@ -27,39 +27,34 @@ function calcular() {
                 prob.push(numero);
             }
         });
-
+       
         var totalprob = prob.reduce(function(acc, curr) {
             return acc + 1 / curr;
         }, 0);
 
-       var probInputsValues = Array.from(probInputs).map(function(input) {
-        return parseFloat(input.value) || 0; 
-    });
-
-
-    var retorno = 
+       
 
         var bets = prob.map(function(probabilidade) {
             var bet = totalbet / (probabilidade * totalprob);
             return bet.toFixed(2);
         });
-        return bets;
+       
+           
         
-        
-
-        
-        
+        return bets
 
     }
     
-    
+   
 
+
+    
     var bets = dutching();
-    if (bets) {
+    
         var output = document.querySelector('section#output');
-        output.innerHTML = `Resultado: ${bets.join(', ')}`;
-        output.innerHTML += `${retorno}` 
+        output.innerHTML = `Resultado: ${bets.join(', ')} `;
+      
 
-        console.log(bets)
-    }
+        
+    
 }
