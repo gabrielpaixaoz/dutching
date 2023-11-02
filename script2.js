@@ -64,23 +64,30 @@ function calcular() {
             var bet = totalbet / (probabilidade * totalprob);
             return bet;
         });
-    
+        
+       
         // Multiplicar cada item de bets pelo correspondente item em probInputs
         bets = bets.map(function(bet, index) {
             return (bet * prob[index]).toFixed(2);
         });
+
     
         return bets;
     } 
     
    
     var re = retorno()
-    
     var bets = dutching();
     
+    
+    
+   
+
+
+        var output_retorno = document.querySelector('span#retorno')
         var output = document.querySelector('section#output');
-        output.innerHTML = `Resultado: ${bets.join(', ')} ${re}`;
-      
+        output.innerHTML = `Resultado: ${bets.join(', ')}`;
+        output_retorno.innerHTML = `${re[0]}`
 
         
     
