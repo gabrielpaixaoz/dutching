@@ -71,23 +71,39 @@ function calcular() {
             return (bet * prob[index]).toFixed(2);
         });
 
-    
+        bets = bets.map(function(valor){
+            return valor || 0;
+        });
+
+        if (bets.length === 0){
+            bets.push(0);
+        }
+        
+
         return bets;
     } 
     
-   
+    var totalbet = Number(document.querySelector('input#investimento').value)
     var re = retorno()
     var bets = dutching();
-    
-    
+    var lucro = re[0] - totalbet
+
+    /*
+    if(lucro <= 0){
+        window.alert('red')
+    } else{
+        window.alert('green')
+    }
+    */
     
    
 
-
+        var output_lucro = document.querySelector('span#lucro')
         var output_retorno = document.querySelector('span#retorno')
         var output = document.querySelector('section#output');
         output.innerHTML = `Resultado: ${bets.join(', ')}`;
         output_retorno.innerHTML = `${re[0]}`
+        output_lucro.innerHTML = `${lucro}`
 
         
     
