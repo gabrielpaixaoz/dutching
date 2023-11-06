@@ -87,7 +87,7 @@ function calcular() {
     var re = retorno()
     var bets = dutching();
     var lucro = re[0] - totalbet
-
+  
     /*
     if(lucro <= 0){
         window.alert('red')
