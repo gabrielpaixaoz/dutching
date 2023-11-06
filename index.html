@@ -10,17 +10,21 @@
 <body>
     <h1>Calculadora Dutching</h1>
     <form action="#" method="get">
-        <label for="number" id="investimento2" >Investimento: </label>
-        <input  name="investimento" id="investimento" oninput="calcular()">
-        <label for=""><p>Lucro: <span id="lucro"></span></p></label>
-        <label for=""><p>Retorno: <span id="retorno"></span></p></label>
-        <button><p>Reniciar Caculadora</button>
+        <div class="div_invest">
+            <label for="number" id="investimento2"  class="label_invest" cla>Investimento: </label>
+            <input  name="investimento" id="investimento" class="input_invest"  oninput="calcular()">
+        </div>
+        
+        <div id="lucro_retorno">
+            <label for=""><p class="lr">Lucro:</p><span id="lucro"></span></label>
+            <label for=""><p class="lr">Retorno:</p><span id="retorno"></span></label>
+        </div>
+        <button id="reload"><p>Reniciar Caculadora</p></button>
+        <div id="margem">Odds</div>
+        
         <label for="number1"><p></p>1º</label>
         <input type="number" name="number1" id="number1"  class="numbers" oninput="calcular()" >
-       <!--
-        <span>10</span>
-        <span>10</span>
-       -->
+        <span id="output"></span>
         <label for="number2"><p></p>2º</label>
         <input type="number" name="number2" id="number2" class="numbers"  oninput="calcular()">
         <label for="number3"><p></p>3º</label>
@@ -44,9 +48,8 @@
         <label for="number4"><p></p>12º</label>
         <input type="number" name="number12" id="number12" class="numbers" oninput="calcular()">
         
-    
     </form>
-    <section id="output"></section>
+    
     
 </body>
 </html>

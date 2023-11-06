@@ -1,5 +1,4 @@
-
-function calcular() {
+ function calcular() {
     function formatarCampoInput(input) {
         var valor = input.value.replace(/[^\d,]/g, ''); // Remove caracteres não numéricos, exceto vírgula
         valor = valor.replace(',', '.'); // Substitui vírgula por ponto como separador decimal
@@ -84,28 +83,34 @@ function calcular() {
     } 
     
     var totalbet = Number(document.querySelector('input#investimento').value)
+    var span = document.querySelector('span#lucro')
     var re = retorno()
     var bets = dutching();
     var lucro = re[0] - totalbet
+    var lucrofixed = lucro.toFixed(2)
   
-    /*
+    
     if(lucro <= 0){
-        window.alert('red')
+        span.style.backgroundColor = "#A85954";
     } else{
-        window.alert('green')
+        
+        span.style.backgroundColor = "#90A955";
     }
-    */
+    
     
    
 
         var output_lucro = document.querySelector('span#lucro')
         var output_retorno = document.querySelector('span#retorno')
-        var output = document.querySelector('section#output');
-        output.innerHTML = `Resultado: ${bets.join(', ')}`;
+        var output = document.querySelector('span#output');
+        var reload = document.querySelector('button#reload')
+        output.innerHTML = `<p>${bets.join('<br>')}<p>`;
         output_retorno.innerHTML = `${re[0]}`
-        output_lucro.innerHTML = `${lucro}`
+        output_lucro.innerHTML = `${lucrofixed}`
+        reload.addEventListener("click",function(){
+            location.reload();
+        })
 
-        
     
 }
 
