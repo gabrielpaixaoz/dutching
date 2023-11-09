@@ -102,6 +102,9 @@
 
     var lucrofixed = lucro.toFixed(2)
     
+    var newre = re.filter(Boolean)
+    
+    var betsnew = []
     
 
     
@@ -112,12 +115,7 @@
         span.style.backgroundColor = "#90A955";
     }
     
-    for(let z = 0; z < re.length; z++){
-        if(re[z] === 0){
-            re[z] = ''
-        }
-        
-    }
+    
    
 
         var output_lucro = document.querySelector('span#lucro')
@@ -137,17 +135,20 @@
             location.reload();
         })
 
-        
+
+    
+
+
          
         var output1 = document.querySelector('span#output1');
         var volta1 = document.querySelector('span#volta1')
         output1.innerHTML = `${bets[0]}`;
-        volta1.innerHTML = `${re[0]}`
+        volta1.innerHTML = `${newre[0]}`
         
         var output2 = document.querySelector('span#output2')
         var volta2 = document.querySelector('span#volta2')
         output2.innerHTML = `${bets[1]}`
-        volta2.innerHTML = `${re[1]}`
+        volta2.innerHTML = `${newre[1]}`
 
         var output3 = document.querySelector('span#output3')
         output3.innerHTML = `${bets[2]}`

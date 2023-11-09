@@ -167,7 +167,7 @@
                 </div>
             </td>
             <td style="text-align: center;"><h3><span id="output11"></span></h3></td>
-            <td style="text-align: center;"><h3><span id="volta11""></span></h3></td>
+            <td style="text-align: center;"><h3><span id="volta11" ></span></h3></td>
         </tr>
         <tr>
             <td>
@@ -181,7 +181,12 @@
         </tr>
         
     </table>
-
+    <script>
+        var teste = document.querySelector('span#output1')
+        if (teste === undefined){
+            teste.innerHTML = ``
+        }
+    </script>
     
 </body>
 </html>
