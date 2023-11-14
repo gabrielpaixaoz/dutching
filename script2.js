@@ -18,6 +18,7 @@
         var totalbet = Number(document.querySelector('input#investimento').value);
         var probInputs = document.querySelectorAll('input[class="numbers"]');
         var prob = [];
+
         
 
         probInputs.forEach(function(input) {
@@ -104,7 +105,6 @@
     
     var newre = re.filter(Boolean)
     
-    var betsnew = []
     
 
     
