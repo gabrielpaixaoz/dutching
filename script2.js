@@ -105,7 +105,10 @@
     
     var newre = re.filter(Boolean)
     
-    
+    if (re.length > 0 && bets.length > 0) {
+        var lucro = re[0] - totalbet;
+        var lucrofixed = lucro.toFixed(2);
+    }
 
     
     if(lucro <= 0){
