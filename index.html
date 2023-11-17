@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Dutching</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script2.js"></script>
+    <script defer src="script3.js"></script>
 </head>
 <body>
     <h1>Calculadora Dutching</h1>
@@ -17,7 +17,7 @@
         <label for=""><p class="lr">Lucro:</p><span id="lucro"></span></label>
         <label for=""><p class="lr">Retorno:</p><span id="retorno"></span></label>
     </div>
-    <button id="reload"><p>Reniciar Caculadora</p></button>
+    <button id="reload" onclick="teste()"><p>Reniciar Caculadora</p></button>
     <div id="margem">Odds</div>
    <!-- <form action="#" method="get">    
         <label for="number1"><p></p>1º</label>
@@ -63,7 +63,7 @@
             <td>
                 <div>
                     <span>1º</span>
-                    <input name="number1" id="number1" class="numbers" type="text" oninput="calcular()"">
+                    <input name="number1" id="number1" class="numbers" type="text" oninput="calcular()">
                 </div>
             </td>
             <td style="text-align: center;"><h3><span id="output1"></span></h3></td>
@@ -73,7 +73,7 @@
             <td>
                 <div>
                     <span>2º</span>
-                    <input name="number2" id="number2" class="numbers" type="text" oninput="calcular()"">
+                    <input name="number2" id="number2" class="numbers" type="text" oninput="calcular()">
                 </div>
             </td>
             <td style="text-align: center;"><h3><span id="output2"></span></h3></td>

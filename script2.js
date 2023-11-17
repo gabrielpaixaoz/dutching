@@ -1,4 +1,4 @@
- function calcular() {
+ function calcular(){
     function formatarCampoInput(input) {
         var valor = input.value.replace(/[^\d,]/g, ''); // Remove caracteres não numéricos, exceto vírgula
         valor = valor.replace(',', '.'); // Substitui vírgula por ponto como separador decimal
@@ -42,7 +42,7 @@
         
 
         
-
+        
         
         
         
@@ -147,41 +147,50 @@
         var volta1 = document.querySelector('span#volta1')
         output1.innerHTML = `${bets[0]}`;
         volta1.innerHTML = `${newre[0]}`
-        
+       
         var output2 = document.querySelector('span#output2')
-        var volta2 = document.querySelector('span#volta2')
-        output2.innerHTML = `${bets[1]}`
-        volta2.innerHTML = `${newre[1]}`
-
-        var output3 = document.querySelector('span#output3')
-        output3.innerHTML = `${bets[2]}`
-
-        var output4 = document.querySelector('span#output4')
-        output4.innerHTML = `${bets[3]}`
-
-        var output5 = document.querySelector('span#output5')
-        output5.innerHTML = `${bets[4]}`
-
-        var output6 = document.querySelector('span#output6')
-        output6.innerHTML = `${bets[5]}`
+var volta2 = document.querySelector('span#volta2')
+output2.innerHTML = `${bets[1]}`
+volta2.innerHTML = `${newre[1]}`
         
-        var output7 = document.querySelector('span#output7')
-        output7.innerHTML = `${bets[6]}`
-
-        var output8 = document.querySelector('span#output8')
-        output8.innerHTML = `${bets[7]}`
-
-        var output9 = document.querySelector('span#output9')
-        output9.innerHTML = `${bets[8]}`
-
-        var output10 = document.querySelector('span#output10')
-        output10.innerHTML = `${bets[9]}`
-
-        var output11 = document.querySelector('span#output11')
-        output11.innerHTML = `${bets[10]}`
-
-        var output12 = document.querySelector('span#output12')
-        output12.innerHTML = `${bets[11]}`
-
         
+       
 }
+
+
+
+
+/* var output2 = document.querySelector('span#output2')
+var volta2 = document.querySelector('span#volta2')
+output2.innerHTML = `${bets[1]}`
+volta2.innerHTML = `${newre[1]}`
+
+var output3 = document.querySelector('span#output3')
+output3.innerHTML = `${bets[2]}`
+
+var output4 = document.querySelector('span#output4')
+output4.innerHTML = `${bets[3]}`
+
+var output5 = document.querySelector('span#output5')
+output5.innerHTML = `${bets[4]}`
+
+var output6 = document.querySelector('span#output6')
+output6.innerHTML = `${bets[5]}`
+
+var output7 = document.querySelector('span#output7')
+output7.innerHTML = `${bets[6]}`
+
+var output8 = document.querySelector('span#output8')
+output8.innerHTML = `${bets[7]}`
+
+var output9 = document.querySelector('span#output9')
+output9.innerHTML = `${bets[8]}`
+
+var output10 = document.querySelector('span#output10')
+output10.innerHTML = `${bets[9]}`
+
+var output11 = document.querySelector('span#output11')
+output11.innerHTML = `${bets[10]}`
+
+var output12 = document.querySelector('span#output12')
+output12.innerHTML = `${bets[11]}` */
