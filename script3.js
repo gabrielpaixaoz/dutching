@@ -49,9 +49,10 @@ function calcular(){
         return (bet * prob[index]).toFixed(2);
     });
 
-    
     var lucro_calculo = isNaN(retorno_calculo[0]) ? 0 : retorno_calculo[0] - totalbet
     var lucrofix = lucro_calculo.toFixed(2)
+
+    
 
     if(lucrofix <= 0){
         lucro.style.backgroundColor = "#A85954";
@@ -69,5 +70,54 @@ function calcular(){
 
     lucro.innerHTML = `${lucrofix}`
     retorno.innerHTML = `${retorno_calculo[0]}`
+
+    return retorno_calculo
     
 }
+
+
+function teste1(){
+
+    var numeroinput1 = document.querySelector('input#number1')
+    
+    
+        var output1 = document.querySelector('span#output1')
+        var volta1 = document.querySelector('span#volta1')
+        
+        bets = investimento();
+        retorno = calcular()
+        
+        if(numeroinput1.value.length === 0){
+            output1.innerHTML = ""
+            volta1.innerHTML = ""
+        }else{
+            output1.innerHTML = `${bets[0]}`
+            volta1.innerHTML = `${retorno[0]}`
+        }
+        
+}
+
+
+function teste2(){
+
+    var numeroinput2 = document.querySelector('input#number1')
+    
+    
+        var output2 = document.querySelector('span#output2')
+        var volta2 = document.querySelector('span#volta2')
+        
+        bets = investimento();
+        retorno = calcular()
+        
+        if(numeroinput2.value.length === 0){
+            output2.innerHTML = ""
+            volta2.innerHTML = ""
+        }else{
+            output2.innerHTML = `${bets[1]}`
+            volta2.innerHTML = `${retorno[1]}`
+        }
+        
+}
+
+
+
