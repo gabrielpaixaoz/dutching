@@ -142,19 +142,27 @@
     
 
 
-         
+        
+        
+        
+        var inputNumber1 = document.querySelector('input#number1')
         var output1 = document.querySelector('span#output1');
         var volta1 = document.querySelector('span#volta1')
-        output1.innerHTML = `${bets[0]}`;
-        volta1.innerHTML = `${newre[0]}`
+        
+
+            if(inputNumber1.length === 0){
+                output1.innerHTML ="teste";
+            }else{
+                output1.innerHTML = `${bets[0]}`;
+            }
+            volta1.innerHTML = `${newre[0]}`
+
+        
        
         var output2 = document.querySelector('span#output2')
-var volta2 = document.querySelector('span#volta2')
-output2.innerHTML = `${bets[1]}`
-volta2.innerHTML = `${newre[1]}`
-        
-        
-       
+        var volta2 = document.querySelector('span#volta2')
+        output2.innerHTML = `${bets[1]}`
+       volta2.innerHTML = `${newre[1]}`
 }
 
 

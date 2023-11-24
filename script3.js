@@ -4,6 +4,12 @@ function investimento(){
     var totalbet = Number(document.querySelector('input#investimento').value)
     var probInputs = document.querySelectorAll('input[class="numbers"]')
     var prob = []
+    var Input1 = document.querySelector('input#number1')
+    var Output1 = document.querySelector('span#output1')
+    var Input2 = document.querySelector('input#number2')
+    var Output2 = document.querySelector('span#output2')
+    var Input3 = document.querySelector('input#number3')
+    var Output3 = document.querySelector('span#output3')
 
     probInputs.forEach(function(input){
         var numero = parseFloat(input.value) || 0;
@@ -20,6 +26,30 @@ function investimento(){
         var bet = totalbet / (probabilidade * totalprob);
         return bet.toFixed(2)
     })
+    
+    /*if (retorno_calculo.length === 0){
+        retorno_calculo.push("0.00");
+    }
+    */
+    if(Input1.value == 0){
+        Output1.innerHTML = ""
+    } else{
+        Output1.innerHTML = `${bets[0]}`
+
+    }
+    if(Input2.value == 0){
+        Output2.innerHTML = ""
+    } else{
+        Output2.innerHTML = `${bets[1]}`
+
+    }
+    if(Input3.value == 0){
+        Output3.innerHTML = ""
+    } else{
+        Output3.innerHTML = `${bets[2]}`
+
+    }
+    
     return bets
     
 }
@@ -71,53 +101,13 @@ function calcular(){
     lucro.innerHTML = `${lucrofix}`
     retorno.innerHTML = `${retorno_calculo[0]}`
 
+   
     return retorno_calculo
     
 }
 
 
-function teste1(){
 
-    var numeroinput1 = document.querySelector('input#number1')
-    
-    
-        var output1 = document.querySelector('span#output1')
-        var volta1 = document.querySelector('span#volta1')
-        
-        bets = investimento();
-        retorno = calcular()
-        
-        if(numeroinput1.value.length === 0){
-            output1.innerHTML = ""
-            volta1.innerHTML = ""
-        }else{
-            output1.innerHTML = `${bets[0]}`
-            volta1.innerHTML = `${retorno[0]}`
-        }
-        
-}
-
-
-function teste2(){
-
-    var numeroinput2 = document.querySelector('input#number1')
-    
-    
-        var output2 = document.querySelector('span#output2')
-        var volta2 = document.querySelector('span#volta2')
-        
-        bets = investimento();
-        retorno = calcular()
-        
-        if(numeroinput2.value.length === 0){
-            output2.innerHTML = ""
-            volta2.innerHTML = ""
-        }else{
-            output2.innerHTML = `${bets[1]}`
-            volta2.innerHTML = `${retorno[1]}`
-        }
-        
-}
 
 
 
