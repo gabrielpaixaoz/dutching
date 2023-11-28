@@ -34,7 +34,7 @@ function investimento(){
     if(Input1.value == 0){
         Output1.innerHTML = ""
     } else{
-        Output1.innerHTML = `${bets[0]}`
+        Output1.innerHTML = `${bets}`
 
     }
     if(Input2.value == 0){
