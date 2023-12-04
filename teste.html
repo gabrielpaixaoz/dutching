@@ -3,63 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exibição condicional de itens em uma tabela</title>
+  <title>Arrays Lado a Lado</title>
   <style>
-    table {
-      border-collapse: collapse;
-      width: 100%;
+    .container {
+      display: flex;
     }
 
-    table, th, td {
-      border: 1px solid black;
-    }
-
-    th, td {
-      padding: 8px;
-      text-align: left;
+    .array {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
     }
   </style>
 </head>
 <body>
 
-  <label for="numeroInput">Número:</label>
-  <input type="number" id="numeroInput" oninput="exibirItens()">
-  
-  <table id="tabelaItens">
-    <thead>
-      <tr>
-        <th>Item</th>
-      </tr>
-    </thead>
-    <tbody id="corpoTabela">
-      <!-- Os itens serão adicionados aqui dinamicamente -->
-    </tbody>
-  </table>
+<div class="container">
+  <div class="array" id="array1"></div>
+  <div class="array" id="array2"></div>
+</div>
 
-  <script>
-    function exibirItens() {
-      // Obtenha o valor do input
-      var numero = document.getElementById('numeroInput').value;
+<script>
+  // Seus arrays
+  var array1 = [1, 2, 3, 4];
+  var array2 = ['a', 'b', 'c', 'd'];
 
-      // Selecione a tabela e o corpo da tabela
-      var tabela = document.getElementById('tabelaItens');
-      var corpoTabela = document.getElementById('corpoTabela');
+  // Função para exibir um array em um elemento HTML
+  function exibirArray(array, elementoId) {
+    var elemento = document.getElementById(elementoId);
+    elemento.textContent = array.join(', '); // Transforma o array em uma string separada por vírgulas
+  }
 
-      // Limpe o corpo da tabela
-      corpoTabela.innerHTML = '';
-
-      // Se o número for maior que 0, adicione os itens à tabela
-      if (numero > 0) {
-        var itens = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
-
-        for (var i = 0; i < numero; i++) {
-          var newRow = corpoTabela.insertRow();
-          var cell = newRow.insertCell(0);
-          cell.innerHTML = itens[i];
-        }
-      }
-    }
-  </script>
+  // Exibe os arrays nos elementos HTML
+  exibirArray(array1, 'array1');
+  exibirArray(array2, 'array2');
+</script>
 
 </body>
 </html>

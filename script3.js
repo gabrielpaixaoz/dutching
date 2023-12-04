@@ -10,7 +10,10 @@ function investimento(){
     var Output2 = document.querySelector('span#output2')
     var Input3 = document.querySelector('input#number3')
     var Output3 = document.querySelector('span#output3')
-
+    var Input4 = document.querySelector('input#number4')
+    var Output4 = document.querySelector('span#output4')
+    var Input5 = document.querySelector('input#number5')
+    var Output5 = document.querySelector('span#output5')
     probInputs.forEach(function(input){
         var numero = parseFloat(input.value) || 0;
         if(numero !== 0 ){
@@ -34,7 +37,8 @@ function investimento(){
     if(Input1.value == 0){
         Output1.innerHTML = ""
     } else{
-        Output1.innerHTML = `${bets}`
+        Output1.innerHTML = `${prob} ${bets}`
+
 
     }
     if(Input2.value == 0){
@@ -47,6 +51,18 @@ function investimento(){
         Output3.innerHTML = ""
     } else{
         Output3.innerHTML = `${bets[2]}`
+
+    }
+    if(Input4.value == 0){
+        Output4.innerHTML = ""
+    } else{
+        Output4.innerHTML = `${bets[3]}`
+
+    }
+    if(Input5.value == 0){
+        Output5.innerHTML = ""
+    } else{
+        Output5.innerHTML = `${bets[4]}`
 
     }
     
