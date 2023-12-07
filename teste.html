@@ -3,41 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arrays Lado a Lado</title>
-  <style>
-    .container {
-      display: flex;
-    }
-
-    .array {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin: 10px;
-    }
-  </style>
+  <title>Adaptando a Ordem do Array</title>
 </head>
 <body>
 
-<div class="container">
-  <div class="array" id="array1"></div>
-  <div class="array" id="array2"></div>
-</div>
+  <form>
+    <label for="output1">Input 1:</label>
+    <input type="number" id="output1" oninput="updateArrayOrder(this.id)" onblur="checkEmpty(this.id)" required>
+    <span id="output1Label"></span>
 
-<script>
-  // Seus arrays
-  var array1 = [1, 2, 3, 4];
-  var array2 = ['a', 'b', 'c', 'd'];
+    <label for="output2">Input 2:</label>
+    <input type="number" id="output2" oninput="updateArrayOrder(this.id)" onblur="checkEmpty(this.id)" required>
+    <span id="output2Label"></span>
 
-  // Função para exibir um array em um elemento HTML
-  function exibirArray(array, elementoId) {
-    var elemento = document.getElementById(elementoId);
-    elemento.textContent = array.join(', '); // Transforma o array em uma string separada por vírgulas
-  }
+    <label for="output3">Input 3:</label>
+    <input type="number" id="output3" oninput="updateArrayOrder(this.id)" onblur="checkEmpty(this.id)" required>
+    <span id="output3Label"></span>
 
-  // Exibe os arrays nos elementos HTML
-  exibirArray(array1, 'array1');
-  exibirArray(array2, 'array2');
-</script>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    var arrayOrder = {};
+
+    function updateArrayOrder(id) {
+      var inputValue = document.getElementById(id).value;
+
+      // Se o valor for apagado, remove o item associado
+      if (inputValue === '') {
+        removeItem(id);
+        return;
+      }
+
+      var index = Object.keys(arrayOrder).length;
+      arrayOrder[id] = index;
+
+      // Simulação de um array, você pode substituir isso com o seu próprio array
+      var array = ['Item 1', 'Item 2', 'Item 3'];
+
+      // Ordena o array com base na ordem dos IDs
+      var sortedArray = Object.keys(arrayOrder).sort((a, b) => arrayOrder[a] - arrayOrder[b]);
+
+      // Atualiza os rótulos dos elementos com os itens do array na ordem correta
+      for (var i = 0; i < sortedArray.length; i++) {
+        var elementId = sortedArray[i];
+        document.getElementById(elementId + 'Label').innerHTML = array[i];
+      }
+    }
+
+    function checkEmpty(id) {
+      var inputValue = document.getElementById(id).value;
+      if (inputValue === '') {
+        removeItem(id);
+      }
+    }
+
+    function removeItem(id) {
+      delete arrayOrder[id];
+
+      // Limpa o rótulo associado ao item removido
+      document.getElementById(id + 'Label').innerHTML = '';
+    }
+  </script>
 
 </body>
 </html>

@@ -4,7 +4,7 @@ function investimento(){
     var totalbet = Number(document.querySelector('input#investimento').value)
     var probInputs = document.querySelectorAll('input[class="numbers"]')
     var prob = []
-    var Input1 = document.querySelector('input#number1')
+    /*var Input1 = document.querySelector('input#number1')
     var Output1 = document.querySelector('span#output1')
     var Input2 = document.querySelector('input#number2')
     var Output2 = document.querySelector('span#output2')
@@ -13,7 +13,7 @@ function investimento(){
     var Input4 = document.querySelector('input#number4')
     var Output4 = document.querySelector('span#output4')
     var Input5 = document.querySelector('input#number5')
-    var Output5 = document.querySelector('span#output5')
+    var Output5 = document.querySelector('span#output5')*/
     probInputs.forEach(function(input){
         var numero = parseFloat(input.value) || 0;
         if(numero !== 0 ){
@@ -34,7 +34,7 @@ function investimento(){
         retorno_calculo.push("0.00");
     }
     */
-    if(Input1.value == 0){
+    /*if(Input1.value == 0){
         Output1.innerHTML = ""
     } else{
         Output1.innerHTML = `${prob} ${bets}`
@@ -64,7 +64,7 @@ function investimento(){
     } else{
         Output5.innerHTML = `${bets[4]}`
 
-    }
+    }*/
     
     return bets
     
@@ -122,7 +122,46 @@ function calcular(){
     
 }
 
+ var arrayOrder = {};
 
+    function updateArrayOrder(id) {
+      var inputValue = document.getElementById(id).value;
+
+      // Se o valor for apagado, remove o item associado
+      if (inputValue === '') {
+        removeItem(id);
+        return;
+      }
+
+      var index = Object.keys(arrayOrder).length;
+      arrayOrder[id] = index;
+
+      // Simulação de um array, você pode substituir isso com o seu próprio array
+      var array = investimento();
+
+      // Ordena o array com base na ordem dos IDs
+      var sortedArray = Object.keys(arrayOrder).sort((a, b) => arrayOrder[a] - arrayOrder[b]);
+
+      // Atualiza os rótulos dos elementos com os itens do array na ordem correta
+      for (var i = 0; i < sortedArray.length; i++) {
+        var elementId = sortedArray[i];
+        document.getElementById(elementId + 'Label').innerHTML = array[i];
+      }
+    }
+
+    function checkEmpty(id) {
+      var inputValue = document.getElementById(id).value;
+      if (inputValue === '') {
+        removeItem(id);
+      }
+    }
+
+    function removeItem(id) {
+      delete arrayOrder[id];
+
+      // Limpa o rótulo associado ao item removido
+      document.getElementById(id + 'Label').innerHTML = '';
+    }
 
 
 

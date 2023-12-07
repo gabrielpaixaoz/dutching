@@ -62,28 +62,28 @@
         <tr>
             <td>
                 <div>
-                    <span>1º</span>
-                    <input name="number1" id="number1" class="numbers" type="text" oninput="investimento()"  "  >
+                    <span >1º</span>
+                    <input name="number1" id="output1" class="numbers" type="text" oninput="calcular() ;updateArrayOrder(this.id)" onblur="checkEmpty(this.id)" required  >
                 </div>
             </td>
-            <td style="text-align: center;"><h3><span id="output1"></span></h3></td>
+            <td style="text-align: center;"><h3 ><span id="output1Label"</span></h3></td>
             <td style="text-align: center;"><h3><span id="volta1"></span></h3></td>
         </tr>
         <tr>
             <td>
                 <div>
                     <span>2º</span>
-                    <input name="number2" id="number2" class="numbers" type="text" oninput="investimento()" >
+                    <input name="number2" id="output2" class="numbers" type="text" oninput="calcular() ;updateArrayOrder(this.id)" onblur="checkEmpty(this.id)" required >
                 </div>
             </td>
-            <td style="text-align: center;"><h3><span id="output2"></span></h3></td>
+            <td style="text-align: center;"><h3><span id="output2Label"></span></h3></td>
             <td style="text-align: center;"><h3><span id="volta2""></span></h3></td>
         </tr>
         <tr>
             <td>
                 <div>
                     <span>3º</span>
-                    <input name="number3" id="number3" class="numbers" type="text" oninput="investimento()"">
+                    <input name="number3" id="number3" class="numbers" type="text" oninput="calcular()"">
                 </div>
             </td>
             <td style="text-align: center;"><h3><span id="output3"></span></h3></td>
