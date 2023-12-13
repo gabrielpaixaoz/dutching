@@ -66,6 +66,7 @@ function investimento(){
 
     }*/
     
+    
     return bets
     
 }
@@ -85,6 +86,10 @@ function probabilidades(){
     return prob
 }
 
+
+function tudo(){
+    
+}
 function calcular(){
     var totalbet = Number(document.querySelector('input#investimento').value)
     var lucro = document.querySelector('span#lucro')
@@ -122,7 +127,9 @@ function calcular(){
     
 }
 
- var arrayOrder = {};
+ 
+
+var arrayOrder = {};
 
     function updateArrayOrder(id) {
       var inputValue = document.getElementById(id).value;
@@ -136,6 +143,7 @@ function calcular(){
       var index = Object.keys(arrayOrder).length;
       arrayOrder[id] = index;
 
+      
       // Simulação de um array, você pode substituir isso com o seu próprio array
       var array = investimento();
 
@@ -162,7 +170,5 @@ function calcular(){
       // Limpa o rótulo associado ao item removido
       document.getElementById(id + 'Label').innerHTML = '';
     }
-
-
 
 

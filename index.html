@@ -11,7 +11,7 @@
     <h1>Calculadora Dutching</h1>
     <div class="div_invest">
         <label for="number" id="investimento2"  class="label_invest" cla>Investimento: </label>
-        <input  name="investimento" id="investimento" class="input_invest"  oninput="calcular()">
+        <input  name="investimento" id="investimento" class="input_invest"  oninput="calcular();updateArrayOrder(this.id)" onblur="checkEmpty(this.id)">
     </div>
     <div id="lucro_retorno">
         <label for=""><p class="lr">Lucro:</p><span id="lucro"></span></label>
@@ -63,7 +63,7 @@
             <td>
                 <div>
                     <span >1º</span>
-                    <input name="number1" id="output1" class="numbers" type="text" oninput="calcular() ;updateArrayOrder(this.id)" onblur="checkEmpty(this.id)" required  >
+                    <input name="number1" id="output1" class="numbers" type="text"  oninput="calcular() ;updateArrayOrder(this.id)" onblur="checkEmpty(this.id)" required  >
                 </div>
             </td>
             <td style="text-align: center;"><h3 ><span id="output1Label"</span></h3></td>
