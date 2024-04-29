@@ -17,7 +17,10 @@ for(var i = 0; i < odds.length; i++){
 }
 
 
+const retorno = investimento
+
 
 
 
 console.log(investimento)
+console.log(retorno)
