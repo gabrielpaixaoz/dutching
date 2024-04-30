@@ -4,9 +4,9 @@ let probabilidadeTotal = 0
 let probabilidades = odds.map((odd) => {
     return 1 / odd
 })
-let investimento = []
+let investimentos= []
 let retorno = []
-
+let lucro = 0
 probabilidades.forEach((probabilidade) =>{
     probabilidadeTotal += probabilidade
 })
@@ -14,16 +14,20 @@ probabilidades.forEach((probabilidade) =>{
 
 
 for(var i = 0; i < odds.length; i++){
-    investimento[i] = (valorInvestido/odds[i])/probabilidadeTotal
+    investimentos[i] = (valorInvestido/odds[i])/probabilidadeTotal
 }
 
 
 for(var i = 0; i < odds.length; i++){
-    retorno[i] = investimento[i] * odds[i]
+    retorno[i] = investimentos[i] * odds[i]
 }
 
+
+
+lucro = retorno[0] - valorInvestido
 
 console.log(valorInvestido)
 console.log(odds)
 console.log(retorno)
-console.log(investimento)
+console.log(investimentos)
+console.log(lucro)
