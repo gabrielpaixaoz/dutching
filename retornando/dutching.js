@@ -1,5 +1,5 @@
 let valorInvestido = 100
-let odds = [3,3.8,3.5]
+let odds = [3,3.8,3.5,1.25,10]
 let probabilidadeTotal = 0
 let probabilidades = odds.map((odd) => {
     return 1 / odd
